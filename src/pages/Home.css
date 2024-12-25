@@ -1,0 +1,61 @@
+.home-container {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .book-list-container {
+    flex: 1 1 80%; 
+    padding: 15px; /* Giảm padding để tiết kiệm không gian */
+    border-right: 2px solid #ddd; /* Thêm đường viền phân cách giữa sách và giỏ hàng */
+    box-sizing: border-box; /* Đảm bảo padding không làm phần tử tràn */
+  }
+  
+  .cart-container {
+    flex: 1 1 18%; /* Phần giỏ hàng chiếm 30% chiều rộng, có thể co giãn */
+    padding: 15px; /* Giảm padding để tiết kiệm không gian */
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Đảm bảo padding không làm phần tử tràn */
+  }
+  
+  /* Thu nhỏ các phần tử trong .book-list-container */
+  .book-list-container p {
+    font-size: 1rem; /* Giảm kích thước chữ */
+    color: #555;
+    text-align: center;
+  }
+  
+  /* Thu nhỏ tiêu đề trong giỏ hàng */
+  .cart-container h2 {
+    font-size: 1.2rem; /* Giảm kích thước tiêu đề */
+    font-weight: bold;
+    margin-bottom: 15px; /* Giảm khoảng cách dưới tiêu đề */
+  }
+  
+  /* Thu nhỏ nội dung trong giỏ hàng */
+  .cart-container p {
+    font-size: 1rem; /* Giảm kích thước chữ */
+    color: #555;
+  }
+  
+  /* Định dạng khi giỏ hàng (cart) được chuyển xuống dưới khi màn hình nhỏ */
+  @media (max-width: 768px) {
+    .home-container {
+      flex-direction: column; /* Chuyển layout sang dạng cột */
+      align-items: center; /* Căn giữa các phần tử */
+    }
+  
+    .book-list-container, .cart-container {
+      max-width: 100%; /* Đảm bảo phần tử không vượt quá chiều rộng */
+      margin-bottom: 20px; /* Khoảng cách giữa phần sách và giỏ hàng */
+    }
+  
+    .cart-container {
+      margin-top: 20px; /* Khoảng cách giữa giỏ hàng và sách */
+    }
+  }
+  

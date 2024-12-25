@@ -1,51 +1,49 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'; // Đảm bảo bạn đã cài react-router-dom
-import { getBook, Book } from '../../services/bookService';
+import { useParams } from 'react-router-dom'; // Dùng useParams để lấy tham số từ URL
+//import { getBookById, Book } from '../../services/bookService';
+//import './BookDetail.css';
 
 const BookDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>(); // Lấy ID từ URL
+  const { bookId } = useParams<{ bookId: string }>(); // Lấy bookId từ URL
   const [book, setBook] = useState<Book | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchBookDetail = async () => {
       try {
-        if (id) {
-          const bookData = await getBook(id);
-          setBook(bookData);
-          setLoading(false);
-        }
+        const bookData = await getBookById(bookId); // Lấy thông tin sách theo bookId
+        setBook(bookData);
+        setLoading(false);
       } catch (error) {
-        console.error('Lỗi khi lấy chi tiết sách:', error);
+        setError('Lỗi khi tải chi tiết sách');
+        setLoading(false);
+        console.error('Lỗi khi tải sách chi tiết:', error);
       }
     };
 
     fetchBookDetail();
-  }, [id]);
+  }, [bookId]);
 
   if (loading) {
-    return <p>Đang tải dữ liệu...</p>;
+    return <p>Đang tải chi tiết sách...</p>;
   }
 
-  if (!book) {
-    return <p>Không tìm thấy sách.</p>;
+  if (error) {
+    return <p>{error}</p>;
   }
 
   return (
-    <div>
-      <h1>{book.title}</h1>
-      {book.imageUrl && (
-        <img
-          src={book.imageUrl}
-          alt={book.title}
-          style={{ width: '200px', height: '300px', objectFit: 'cover' }}
-        />
+    <div className="book-detail-container">
+      {book && (
+        <>
+          <img src={book.imageUrl} alt={book.title} />
+          <h1>{book.title}</h1>
+          <p>{book.author}</p>
+          <p>{book.price} coin</p>
+          <p>{book.description}</p>
+        </>
       )}
-      <p>Tác giả: {book.author}</p>
-      <p>Mô tả: {book.description}</p>
-      <p>Giá: {book.price.toFixed(2)} coin</p>
-      <p>Số lượng: {book.stock}</p>
-      <p>Ngày tạo: {new Date(book.createdAt || '').toLocaleDateString()}</p>
     </div>
   );
 };
