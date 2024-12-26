@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { getAllBooks, Book } from '../services/bookService';
-import Cart from '../components/Cart/Cart'; // Import Cart component
-import Shell from '../components/Shell/Shell';
-import BookList from '../components/BookList/BookList'; // Import BookList component
-import './Home.css'; // Import file CSS để tạo layout
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { getAllBooks, Book } from '../../services/bookService';
+import Cart from '../../components/Cart/Cart';
+import Shell from '../../components/Shell/Shell';
+import BookList from '../../components/BookList/BookList';
+import './Home.css';
 
 const Home: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+
+  const navigate = useNavigate(); // Hook để điều hướng
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -26,6 +29,10 @@ const Home: React.FC = () => {
     fetchBooks();
   }, []);
 
+  const handleBookClick = (book: Book) => {
+    navigate(`/book/${book._id}`); // Điều hướng đến trang chi tiết sách
+  };
+
   return (
     <Shell>
       <div className="home-container">
@@ -35,7 +42,7 @@ const Home: React.FC = () => {
           ) : error ? (
             <p>{error}</p>
           ) : (
-            <BookList books={books} />
+            <BookList books={books} onBookClick={handleBookClick} />
           )}
         </div>
         <div className="cart-container">

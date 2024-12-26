@@ -1,0 +1,89 @@
+.book-detail-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
+  /* Căn giữa phần tử */
+  box-sizing: border-box;
+}
+
+.book-detail-content {
+  flex: 1 1 78%;
+  /* Phần chi tiết sách chiếm 80% chiều rộng */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.cart-container {
+  flex: 1 1 20%;
+  /* Phần giỏ hàng chiếm 20% chiều rộng */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.book-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.book-detail img {
+  max-width: 100%;
+  /* Đảm bảo ảnh không vượt quá chiều rộng của phần chứa */
+  height: auto;
+  /* Chiều cao tự động điều chỉnh theo chiều rộng */
+  object-fit: contain;
+  /* Đảm bảo ảnh không bị méo */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.book-detail h2 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.book-detail p {
+  font-size: 16px;
+  color: #555555;
+  margin: 5px 0;
+}
+
+.book-detail p strong {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Định dạng khi màn hình nhỏ */
+@media (max-width: 768px) {
+  .book-detail-container {
+    flex-direction: column;
+    /* Chuyển layout sang dạng cột */
+    align-items: center;
+    /* Căn giữa các phần tử */
+  }
+
+  .book-detail-content,
+  .cart-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+    /* Khoảng cách giữa phần sách và giỏ hàng */
+  }
+
+  .cart-container {
+    margin-top: 20px;
+    /* Khoảng cách giữa giỏ hàng và sách */
+  }
+}

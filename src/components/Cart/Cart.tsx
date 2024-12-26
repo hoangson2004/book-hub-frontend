@@ -15,22 +15,18 @@ const Cart: React.FC = () => {
 
     // Lấy token từ localStorage
     const token = localStorage.getItem('token');
-    console.log('Token trong localStorage:', token);
 
     // Hàm lấy giỏ hàng
     const fetchCart = async () => {
         if (!token) {
-            setError('Token không tồn tại hoặc không hợp lệ');
+            setError('Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng');
             setLoading(false);
             return;
         }
 
         try {
-            console.log('Đang gọi API để lấy giỏ hàng...');
             const response = await getCartByUserId();
-            console.log('Dữ liệu giỏ hàng từ API:', response);
 
-            // Xử lý dữ liệu trả về
             if (response.status === 'success' && Array.isArray(response.data)) {
                 setCart(response.data);
             } else {
@@ -39,7 +35,6 @@ const Cart: React.FC = () => {
             }
             setLoading(false);
         } catch (error) {
-            console.error('Lỗi khi gọi API giỏ hàng:', error);
             setError('Lỗi khi tải giỏ hàng');
             setLoading(false);
         }

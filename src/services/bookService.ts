@@ -34,7 +34,7 @@ export const getAllBooks = async (): Promise<Book[]> => {
   }
 };
 
-export const getBook = async (id: string): Promise<Book> => {
+export const getBookById = async (id: string): Promise<Book> => {
   try {
     const response = await api.get(`/book/${id}`);
     return response.data.data;

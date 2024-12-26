@@ -7,19 +7,18 @@ const SignIn: React.FC = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-
   const handleLogin = async () => {
     try {
       const { token, user } = await login({ email, password });
 
       // Lưu token vào localStorage
       localStorage.setItem('token', token);
-
       // Lưu thông tin user nếu cần
       localStorage.setItem('user', JSON.stringify(user));
 
       alert(`Chào mừng ${user.username}`);
       navigate('/'); // Điều hướng về trang chính
+      window.location.reload();
     } catch (error) {
       setError('Email hoặc mật khẩu không đúng');
       console.error('Lỗi khi đăng nhập:', error);

@@ -1,0 +1,43 @@
+.header {
+  position: fixed;  /* Để header luôn cố định ở trên cùng */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;  /* Chiếm toàn bộ chiều rộng của viewport */
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;  /* Đảm bảo Header luôn nằm trên các phần tử khác */
+  display: flex;
+  justify-content: space-between; /* Đẩy các phần tử vào 2 bên */
+  align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+  padding: 10px 20px;
+}
+
+.header-title h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.header-auth {
+  display: flex;
+  align-items: center;
+}
+
+.auth-button {
+  padding: 10px 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 30px;
+}
+
+.auth-button:hover {
+  background-color: #007bff;
+}
+
+.coin-balance {
+  margin-right: 10px;
+}
