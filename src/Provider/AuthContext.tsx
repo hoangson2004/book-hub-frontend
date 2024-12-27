@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { getCoinBalance } from '../services/authService';
+import { getCoinBalance, login as loginService } from '../services/authService';
 
 interface AuthContextProps {
     isAuthenticated: boolean;
     coinBalance: number;
+    login: (email: string, password: string) => Promise<void>;
     logout: () => void;
 }
-
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
@@ -25,7 +25,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             const fetchCoinBalance = async () => {
                 try {
                     const balance = await getCoinBalance();
-                    // Assuming balance is an object with shape { balance: number }
                     setCoinBalance(balance.balance || 0);
                 } catch (error) {
                     console.error('Error fetching coin balance:', error);
@@ -36,22 +35,36 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         }
     }, []);
 
+    const login = async (email: string, password: string) => {
+        try {
+            const { token, user } = await loginService({ email, password });
+
+            // Lưu token vào localStorage
+            localStorage.setItem('token', token);
+            localStorage.setItem('user', JSON.stringify(user));
+
+            setIsAuthenticated(true);
+            alert(`Chào mừng ${user.username}`);
+        } catch (error) {
+            throw new Error('Đăng nhập thất bại');
+        }
+    };
 
     const logout = () => {
         setIsAuthenticated(false);
         localStorage.removeItem('token');
+        localStorage.removeItem('user');
         localStorage.removeItem('coinBalance');
         setCoinBalance(0);
     };
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, coinBalance, logout }}>
+        <AuthContext.Provider value={{ isAuthenticated, coinBalance, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
 };
 
-// Custom hook to use the AuthContext
 export const useAuth = () => {
     const context = useContext(AuthContext);
     if (!context) {

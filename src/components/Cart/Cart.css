@@ -1,0 +1,112 @@
+.booklist-container {
+    padding: 20px;
+  }
+  
+  .booklist-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Tự động căn chỉnh các phần tử */
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .book-item {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-item img {
+    width: 100%;
+    height: 200px; /* Chiều cao cố định */
+    object-fit: cover; /* Giữ tỉ lệ và cắt ảnh */
+    border-radius: 4px;
+  }
+  
+  .book-item h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .book-item p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .book-item .author {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .book-item .price {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .book-item .rental-price {
+    color: #007bff;
+  }
+  
+  button {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #007bff;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pagination span {
+    font-size: 16px;
+    color: #555;
+  }
+  

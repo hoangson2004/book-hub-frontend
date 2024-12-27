@@ -1,0 +1,98 @@
+/* auth.css */
+.auth-form {
+    width: 30%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.auth-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.auth-form .password-container {
+    position: relative;
+}
+
+.auth-form .password-container input {
+    width: calc(100% - 30px); /* Make room for the eye icon */
+}
+
+.auth-form .eye-icon {
+    position: absolute;
+    right: -20px;
+    top: 35%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.auth-form button:hover {
+    background-color: #45a049;
+}
+
+.auth-form .error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.auth-form .switch-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.auth-form .switch-container a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-form .switch-container a:hover {
+    text-decoration: underline;
+}
+    
+.agreement-container {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.agreement-container a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.agreement-container a:hover {
+    text-decoration: underline;
+}

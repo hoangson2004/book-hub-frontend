@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css'; // Import CSS
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../Provider/AuthContext';
+import { useAuth } from '../../provider/AuthContext';
 
 const Header: React.FC = () => {
   const { isAuthenticated, coinBalance, logout } = useAuth();

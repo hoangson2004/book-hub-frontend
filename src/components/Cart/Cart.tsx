@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../../Provider/CartContext';
+import { useCart } from '../../provider/CartContext';
 
 const Cart: React.FC = () => {
     const { cart, loading, error, handleRemove, handleUpdate } = useCart();
