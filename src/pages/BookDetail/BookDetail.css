@@ -1,33 +1,32 @@
 .book-detail-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   gap: 20px;
   padding: 20px;
   flex-wrap: wrap;
   max-width: 100%;
-  margin: 0 auto;
-  /* Căn giữa phần tử */
-  box-sizing: border-box;
+
 }
 
 .book-detail-content {
-  flex: 1 1 78%;
+  flex: 1 1 75%;
   /* Phần chi tiết sách chiếm 80% chiều rộng */
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
 .cart-container {
-  flex: 1 1 20%;
-  /* Phần giỏ hàng chiếm 20% chiều rộng */
-  padding: 20px;
-  background-color: #f9f9f9;
+  flex: 1 1 20%; 
+  margin-right: 10px;
+  padding: 15px; 
+  background-color: #f8f9fa;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; 
 }
 
 .book-detail {

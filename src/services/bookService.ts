@@ -24,6 +24,7 @@ export const getAllBooks = async (): Promise<Book[]> => {
         price: book.price,
         stock: book.stock,
         imageUrl: book.imageUrl,
+        createdAt: book.createdAt
       }));
     } else {
       throw new Error('Dữ liệu không hợp lệ, trường "data" không phải là mảng');

@@ -45,6 +45,7 @@ const BookDetailPage: React.FC = () => {
               <p><strong>Tác giả:</strong> {book.author}</p>
               <p><strong>Mô tả:</strong> {book.description}</p>
               <p><strong>Giá:</strong> {book.price} coin</p>
+              {/* <p><strong>Ngày cập nhật:</strong> {book.createdAt}</p> */}
             </div>
           ) : (
             <p>Không tìm thấy sách</p>

@@ -1,70 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { getCartByUserId, removeFromCart, updateCart } from '../../services/cartService';
-
-interface CartItem {
-    bookId: string;
-    title: string;
-    price: number;
-    quantity: number;
-}
+import React from 'react';
+import { useCart } from '../../Provider/CartContext';
 
 const Cart: React.FC = () => {
-    const [cart, setCart] = useState<CartItem[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
-
-    // Lấy token từ localStorage
-    const token = localStorage.getItem('token');
-
-    // Hàm lấy giỏ hàng
-    const fetchCart = async () => {
-        if (!token) {
-            setError('Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng');
-            setLoading(false);
-            return;
-        }
-
-        try {
-            const response = await getCartByUserId();
-
-            if (response.status === 'success' && Array.isArray(response.data)) {
-                setCart(response.data);
-            } else {
-                setCart([]);
-                setError('Giỏ hàng rỗng hoặc dữ liệu không hợp lệ.');
-            }
-            setLoading(false);
-        } catch (error) {
-            setError('Lỗi khi tải giỏ hàng');
-            setLoading(false);
-        }
-    };
-
-    // Gọi hàm fetchCart mỗi khi có thay đổi giỏ hàng
-    useEffect(() => {
-        fetchCart();
-    }, [token]);
-
-    const handleRemove = async (bookId: string) => {
-        try {
-            console.log('Đang xóa sách:', bookId);
-            await removeFromCart(bookId);
-            // Sau khi xóa, gọi lại hàm fetchCart để cập nhật giỏ hàng
-            fetchCart();
-        } catch (error) {
-            console.error('Lỗi khi xóa sách:', error);
-        }
-    };
-
-    const handleUpdate = async (bookId: string, quantity: number) => {
-        try {
-            console.log('Đang cập nhật số lượng sách:', bookId, 'Số lượng mới:', quantity);
-            await updateCart(bookId, quantity);
-            fetchCart();
-        } catch (error) {
-            console.error('Lỗi khi cập nhật số lượng:', error);
-        }
-    };
+    const { cart, loading, error, handleRemove, handleUpdate } = useCart();
 
     if (loading) return <p>Đang tải giỏ hàng...</p>;
     if (error) return <p>{error}</p>;
