@@ -1,15 +1,6 @@
 import api from './api';
 
-export interface Book {
-  _id: string;
-  title: string;
-  author: string;
-  price: number;
-  stock: number;
-  imageUrl?: string;
-  description?: string;
-  createdAt?: Date;
-}
+import { Book } from '../types/Book';
 
 // Lấy danh sách sách với các trường cần thiết
 export const getAllBooks = async (): Promise<Book[]> => {

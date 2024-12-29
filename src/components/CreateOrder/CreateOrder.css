@@ -1,0 +1,230 @@
+/* Container chính */
+.create-order-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Giỏ hàng */
+.cart-item-order {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 2fr 2fr 1fr;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+
+}
+
+.cart-item-order img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.cart-item-details-order {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-details-order p {
+    margin: 5px 0;
+}
+
+.cart-item-details-order a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.cart-item-details-order a:hover {
+    text-decoration: underline;
+}
+
+/* Cột giá sách */
+.cart-item-price-order,
+.cart-item-rental-order,
+.cart-item-quantity-order,
+.cart-item-actions-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-item-price-order,
+.cart-item-rental-order {
+    text-align: center;
+}
+
+.cart-item-quantity-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-item-quantity-order button {
+    background-color: #ffcc00;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.cart-item-quantity-order button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.cart-item-actions-order button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-item-actions-order button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Dòng tiêu đề cho giỏ hàng */
+.cart-item-header-order {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr 3fr 2fr 2fr 1fr;
+    gap: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+    border-bottom: 2px solid #ddd;
+}
+
+.cart-item-header-order div {
+    text-align: center;
+}
+
+/* Tóm tắt đơn hàng */
+.order-summary {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.2rem;
+    background-color: #f9f9f9;
+}
+
+.order-summary p {
+    margin: 5px 0;
+}
+
+.order-summary p strong {
+    font-weight: bold;
+}
+
+.order-summary .total {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.order-summary select,
+.order-summary input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Phần thông tin thanh toán */
+.payment-info-order {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.payment-info-order>div {
+    width: 48%;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+.modal-content button {
+    margin: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cart-item-order {
+        grid-template-columns: 1fr 1fr;
+        /* Chỉnh lại cột */
+    }
+
+    .cart-item-order img {
+        width: 60px;
+        height: 90px;
+    }
+
+    .cart-item-price-order,
+    .cart-item-rental-order,
+    .cart-item-quantity-order,
+    .cart-item-actions-order {
+        text-align: center;
+    }
+
+    .order-summary {
+        font-size: 1rem;
+    }
+
+    .payment-info-order {
+        flex-direction: column;
+    }
+
+    .payment-info-order>div {
+        width: 100%;
+    }
+}

@@ -1,0 +1,47 @@
+.sidebar-content {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.sidebar-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-content li {
+  margin-bottom: 15px; /* Khoảng cách giữa các item */
+}
+
+.sidebar-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-content a:hover {
+  background-color: #8d95a1; /* Màu nền khi hover */
+  color: white; /* Màu chữ khi hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transform: scale(1.05); 
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+.sidebar-content a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Responsive thiết kế cho sidebar */
+@media (max-width: 768px) {
+  .sidebar-content {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    margin-bottom: 20px; /* Khoảng cách dưới khi màn hình nhỏ */
+  }
+}

@@ -1,21 +1,76 @@
+/* Header container */
 .header {
-  position: fixed;  /* Để header luôn cố định ở trên cùng */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;  /* Chiếm toàn bộ chiều rộng của viewport */
+  width: 100%;
   background-color: #f8f9fa;
   border-bottom: 1px solid #ddd;
-  z-index: 1000;  /* Đảm bảo Header luôn nằm trên các phần tử khác */
+  z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Đẩy các phần tử vào 2 bên */
-  align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
 }
 
+.header-title {
+  display: flex;
+  align-items: center;
+  text-decoration: none; 
+  color: #333;
+}
+
+/* Logo */
+.logo {
+  object-fit: contain;
+  height: 40px;
+  margin-right: 10px; /* Khoảng cách giữa logo và tên */
+}
+
+/* Tiêu đề website */
 .header-title h1 {
   font-size: 24px;
   margin: 0;
+}
+
+/* Thanh tìm kiếm */
+.header-search {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.header-search input {
+  width: 450px;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+.header-search button {
+  padding: 10px;
+  border: none;
+  background-color: #a7a8a7;
+  color: white;
+  border-radius: 0 4px 4px 0; /* Bo góc phải */
+  font-size: 16px;
+  cursor: pointer;
+  display: flex; /* Để căn giữa icon */
+  align-items: center;
+  justify-content: center;
+}
+
+.header-search button:hover {
+  background-color: #878a87;
+}
+
+.header-search button::before {
+  content: '🔍'; /* Biểu tượng kính lúp */
+  font-size: 18px;
 }
 
 .header-auth {
@@ -23,21 +78,38 @@
   align-items: center;
 }
 
+.right-button {
+  margin-right: 30px;
+}
+
 .auth-button {
-  padding: 10px 20px;
+  padding: 10px 10px;
   background-color: #1a1a1a;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-left: 10px;
-  margin-right: 30px;
+  width: 120px; 
+  text-align: center; 
 }
 
 .auth-button:hover {
-  background-color: #007bff;
+  background-color: #4CAF50;
 }
 
 .coin-balance {
   margin-right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-search input {
+    width: 100%; /* Thanh tìm kiếm chiếm toàn bộ chiều rộng */
+    max-width: 300px; /* Giới hạn chiều rộng */
+  }
+
+  .auth-button {
+    width: 100px; /* Giảm chiều rộng nút trên màn hình nhỏ */
+  }
 }

@@ -6,11 +6,13 @@ const Nav: React.FC = () => {
   return (
     <nav className="nav">
       <ul className="nav-list">
-        <li className="nav-item"><Link to="/fiction">Tiểu thuyết</Link></li>
-        <li className="nav-item"><Link to="/comics">Truyện tranh</Link></li>
-        <li className="nav-item"><Link to="/children">Sách truyện thiếu nhi</Link></li>
-        
-        {/* Các mục khác */}
+        <li className="nav-item"><Link to="/">Tiểu thuyết</Link></li>
+        <li className="nav-item"><Link to="/">Truyện tranh</Link></li>
+        <li className="nav-item"><Link to="/">Trinh thám</Link></li>
+        <li className="nav-item"><Link to="/">Kiếm hiệp</Link></li>
+        <li className="nav-item"><Link to="/">Ngôn tình</Link></li>
+        <li className="nav-item"><Link to="/">Thiếu nhi</Link></li>
+        <li className="nav-item"><Link to="/">Sách kỹ năng</Link></li>
       </ul>
     </nav>
   );

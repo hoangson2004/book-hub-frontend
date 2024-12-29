@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { getCartByUserId, removeFromCart, updateCart, addToCart as addToCartService } from '../services/cartService';
+import { CartItem } from '../types/CartItem';
+import {
+    getCartByUserId,
+    removeFromCart,
+    updateCart,
+    addToCart as addToCartService
+} from '../services/cartService';
 
-interface CartItem {
-    bookId: string;
-    title: string;
-    price: number;
-    quantity: number;
-}
 
 interface CartContextValue {
     cart: CartItem[];
@@ -15,7 +15,7 @@ interface CartContextValue {
     fetchCart: () => Promise<void>;
     handleRemove: (bookId: string) => Promise<void>;
     handleUpdate: (bookId: string, quantity: number) => Promise<void>;
-    addToCart: (bookId: string, quantity: number) => Promise<void>; // Thêm hàm addToCart
+    addToCart: (bookId: string, quantity: number) => Promise<void>;
 }
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
@@ -37,8 +37,17 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         try {
             setLoading(true);
             const response = await getCartByUserId();
+
             if (response.status === 'success' && Array.isArray(response.data)) {
-                setCart(response.data);
+                // Map dữ liệu server thành cấu trúc CartItem
+                const formattedCart = response.data.map((item: any) => ({
+                    bookId: item.bookId._id,
+                    title: item.bookId.title.trim(),
+                    price: item.bookId.price,
+                    quantity: item.quantity,
+                }));
+
+                setCart(formattedCart);
             } else {
                 setCart([]);
                 setError('Giỏ hàng rỗng hoặc dữ liệu không hợp lệ.');
@@ -94,7 +103,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 fetchCart,
                 handleRemove,
                 handleUpdate,
-                addToCart, // Thêm vào context provider
+                addToCart,
             }}
         >
             {children}
