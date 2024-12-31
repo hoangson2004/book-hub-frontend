@@ -19,18 +19,14 @@ const Cart: React.FC = () => {
                 <ul className="cart-list">
                     {cart.map((item) => (
                         <li key={item.bookId} className="cart-item">
-                            {/* Phần trên của item: Tiêu đề */}
                             <p className="cart-item-title">Tên sách: {item.title}</p>
 
-                            {/* Phần dưới của item: Giá, Số lượng và các nút điều chỉnh */}
                             <div className="cart-item-bottom">
-                                {/* Bên trái: Giá và Số lượng */}
                                 <div className="cart-item-left">
                                     <p className="cart-item-price">Giá: {item.price} coin</p>
                                     <p className="cart-item-quantity">Số lượng: {item.quantity}</p>
                                 </div>
 
-                                {/* Bên phải: Các nút điều chỉnh */}
                                 <div className="cart-item-right">
                                     <button
                                         onClick={() => handleUpdate(item.bookId, item.quantity + 1)}
@@ -60,7 +56,7 @@ const Cart: React.FC = () => {
             {cart.length > 0 && (
                 <button
                     className="checkout-button"
-                    onClick={() => navigate('orders')}
+                    onClick={() => (window.location.href = '/orders')}
                 >
                     Đặt hàng
                 </button>

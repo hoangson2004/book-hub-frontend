@@ -8,15 +8,14 @@ import './CreateOrder.css'
 
 const CreateOrderPage: React.FC = () => {
   const { cart, loading, error, handleRemove, handleUpdate, fetchCart } = useCart();
-  const [createOrderData, setCreateOrderData] = useState<CreateOrder | null>(null);
-  const [dueDate, setDueDate] = useState<string>(''); // Ngày đến hạn
-  const [paymentMethod, setPaymentMethod] = useState<string>('Coin'); // Phương thức thanh toán
-  const [totalPrice, setTotalPrice] = useState<number>(0); // Tổng giá sách
-  const [deposit, setDeposit] = useState<number>(0); // Tiền cọc
-  const [rentalFee, setRentalFee] = useState<number>(0); // Tiền thuê
-  const [totalAmount, setTotalAmount] = useState<number>(0); // Tiền tổng
-  const [bookDetails, setBookDetails] = useState<any[]>([]); // Dữ liệu chi tiết sách
-  const [showConfirmation, setShowConfirmation] = useState<boolean>(false); // Hiển thị modal xác nhận
+  const [dueDate, setDueDate] = useState<string>('');
+  const [paymentMethod, setPaymentMethod] = useState<string>('Coin'); 
+  const [totalPrice, setTotalPrice] = useState<number>(0); 
+  const [deposit, setDeposit] = useState<number>(0); 
+  const [rentalFee, setRentalFee] = useState<number>(0);
+  const [totalAmount, setTotalAmount] = useState<number>(0); 
+  const [bookDetails, setBookDetails] = useState<any[]>([]); 
+  const [showConfirmation, setShowConfirmation] = useState<boolean>(false); 
 
   useEffect(() => {
     if (cart && cart.length > 0) {
@@ -75,16 +74,13 @@ const CreateOrderPage: React.FC = () => {
       paymentMethod,
     };
 
-    setCreateOrderData(orderData);
-    if (createOrderData) {
-      try {
-        const response = await createOrderApi(createOrderData);
-        console.log('Đơn hàng đã được tạo:', response);
-        alert('Đơn hàng đã được tạo thành công!');
-        window.location.href = '/';
-      } catch (error) {
-        console.error('Lỗi khi tạo đơn hàng:', error);
-      }
+    try {
+      const response = await createOrderApi(orderData);
+      console.log('Đơn hàng đã được tạo:', response);
+      alert('Đơn hàng đã được tạo thành công!');
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Lỗi khi tạo đơn hàng:', error);
     }
   };
 

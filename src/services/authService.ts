@@ -1,41 +1,17 @@
 import api from './api'; // Import api đã cấu hình
+import { RegisterData, LoginData, LoginResponse, UpdateProfile, User } from '../types/User';
 
-export interface RegisterData {
-  username: string;
-  email: string;
-  password: string;
-  phoneNumber: string;
-  dateOfBirth: string;
-}
-
-export interface LoginData {
-  email: string;
-  password: string;
-}
-
-export interface LoginResponse {
-  token: string;
-  user: {
-    id: string;
-    username: string;
-    role: string;
-  };
-}
 
 
 export const register = async (data: RegisterData): Promise<void> => {
   try {
-    await api.post('/auth/register', data); // Gửi yêu cầu đến endpoint đăng ký
+    await api.post('/auth/register', data); 
   } catch (error) {
     console.error('Lỗi khi đăng ký:', error);
     throw error;
   }
 };
 
-export interface LoginData {
-  email: string;
-  password: string;
-}
 
 export const login = async (data: LoginData): Promise<LoginResponse> => {
   try {
@@ -56,3 +32,24 @@ export const getCoinBalance = async () => {
     throw error;
   }
 }
+
+
+export const getUserProfile = async (): Promise<User> => {
+    try {
+        const response = await api.get('/auth/profile');
+        return response.data.user; // Trả về dữ liệu người dùng
+    } catch (error) {
+        console.error('Lỗi khi lấy hồ sơ người dùng:', error);
+        throw error; // Ném lỗi để xử lý ở tầng gọi API
+    }
+};
+
+export const updateUserProfile = async (profileData: UpdateProfile): Promise<User> => {
+    try {
+        const response = await api.put('/auth/profile', profileData);
+        return response.data; // Trả về dữ liệu đã cập nhật
+    } catch (error) {
+        console.error('Lỗi khi cập nhật hồ sơ người dùng:', error);
+        throw error; // Ném lỗi để xử lý ở tầng gọi API
+    }
+};

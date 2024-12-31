@@ -8,6 +8,7 @@ import Order from './pages/Order/Order';
 import OrderList from './components/OrderList/OrderList';
 import OrderDetail from './components/OrderDetail/OrderDetail';
 import CreateOrder from './components/CreateOrder/CreateOrder';
+import UserProfile from './pages/UserProfile/Userprofile';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/book/:bookId" element={<BookDetail />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/account" element={<UserProfile/>} />
         <Route path="/orders" element={<Order />}>
           <Route path="history" element={<OrderList />} />
           <Route path="create" element={<CreateOrder />} />

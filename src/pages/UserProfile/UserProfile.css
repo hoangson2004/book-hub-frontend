@@ -1,0 +1,74 @@
+.user-profile-container {
+    max-width: 800px;
+    padding: 20px 20px 15% 100px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.user-profile-container p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.user-profile-container p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.loading-text {
+    font-size: 16px;
+    color: #007bff;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .user-profile-container {
+        padding: 15px;
+    }
+
+    .user-profile-container h2 {
+        font-size: 20px;
+    }
+
+    .user-profile-container p {
+        font-size: 14px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+}

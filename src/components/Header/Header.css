@@ -12,6 +12,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
 }
 
 .header-title {
@@ -56,10 +57,10 @@
   border: none;
   background-color: #a7a8a7;
   color: white;
-  border-radius: 0 4px 4px 0; /* Bo góc phải */
+  border-radius: 0 4px 4px 0;
   font-size: 16px;
   cursor: pointer;
-  display: flex; /* Để căn giữa icon */
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -79,7 +80,9 @@
 }
 
 .right-button {
-  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa các nút */
 }
 
 .auth-button {
@@ -89,9 +92,8 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 10px;
-  width: 120px; 
-  text-align: center; 
+  width: 120px;
+  text-align: center;
 }
 
 .auth-button:hover {
@@ -100,6 +102,56 @@
 
 .coin-balance {
   margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Avatar container */
+.user-avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.avatar-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Dropdown menu */
+.avatar-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.menu-item {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
 }
 
 /* Responsive */

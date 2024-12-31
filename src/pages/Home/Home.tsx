@@ -30,7 +30,7 @@ const Home: React.FC = () => {
   }, []);
 
   const handleBookClick = (book: Book) => {
-    navigate(`/book/${book._id}`); // Điều hướng đến trang chi tiết sách
+    navigate(`/book/${book._id}`); 
   };
 
   return (

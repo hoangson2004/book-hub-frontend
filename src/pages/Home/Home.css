@@ -10,7 +10,6 @@
 
 .book-list-container {
   flex: 1 1 75%;
-  /* Phần chi tiết sách chiếm 80% chiều rộng */
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 8px;
@@ -22,10 +21,6 @@
   flex: 1 1 20%; 
   margin-right: 10px;
   padding: 15px; 
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; 
 }
 
 /* Thu nhỏ các phần tử trong .book-list-container */
