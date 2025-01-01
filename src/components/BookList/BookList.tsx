@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Book } from '../../services/bookService';
+import { Book } from '../../types/Book';
 import { useCart } from '../../provider/CartContext';
 import './BookList.css';
 
@@ -27,7 +27,7 @@ const BookList: React.FC<BookListProps> = ({ books, onBookClick }) => {
   };
 
   return (
-    <div className="booklist-container">
+    <div className="booklist-container" >
       <h2 className="booklist-title">Danh sách truyện</h2>
       <div className="book-list">
         {currentBooks.map((book) => (

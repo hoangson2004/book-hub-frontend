@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const navigate = useNavigate(); // Hook để điều hướng
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
 
   return (
     <Shell>
-      <div className="home-container">
+      <div className="home-container" >
         <div className="book-list-container">
           {loading ? (
             <p>Đang tải dữ liệu...</p>

@@ -2,11 +2,9 @@ import api from './api';
 
 import { Book } from '../types/Book';
 
-// Lấy danh sách sách với các trường cần thiết
 export const getAllBooks = async (): Promise<Book[]> => {
   try {
     const response = await api.get('/book');
-    // Kiểm tra xem response.data có phải là một đối tượng chứa trường 'data' không
     if (response.data && Array.isArray(response.data.data)) {
       return response.data.data.map((book: Book) => ({
         _id: book._id,

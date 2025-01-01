@@ -14,7 +14,7 @@ const SignIn: React.FC = () => {
   const handleLogin = async () => {
     try {
       await login(email, password);
-      navigate('/'); // Điều hướng về trang chính
+      navigate('/'); 
       window.location.reload();
     } catch (error) {
       setError('Email hoặc mật khẩu không đúng');

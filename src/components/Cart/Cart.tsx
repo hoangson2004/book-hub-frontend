@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCart } from '../../provider/CartContext';
-import { useNavigate } from 'react-router-dom'; // Điều hướng tới trang thanh toán
-import './Cart.css'; // Import file CSS
+import { useNavigate } from 'react-router-dom'; 
+import './Cart.css';
 
 const Cart: React.FC = () => {
     const { cart, loading, error, handleRemove, handleUpdate } = useCart();

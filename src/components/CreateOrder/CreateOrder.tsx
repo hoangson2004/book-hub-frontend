@@ -123,7 +123,6 @@ const CreateOrderPage: React.FC = () => {
         <div>
           <div>
             <h3>Giỏ hàng:</h3>
-            {/* Dòng tiêu đề */}
             <div className="cart-item-header-order">
               <div><strong></strong></div>
               <div><strong>Tên sách</strong></div>

@@ -6,9 +6,7 @@
     flex-wrap: wrap;
     width: 100%;
     max-width: 100%;
-    /* Đảm bảo không vượt quá container */
     box-sizing: border-box;
-    /* Đảm bảo padding không làm thay đổi kích thước */
 }
 
 .main-content {
@@ -27,24 +25,18 @@
     background-color: #f8f9fa;
     min-height: 100%;
     width: 100%;
-    /* Đảm bảo sidebar chiếm toàn bộ chiều rộng container */
 }
 
-/* Responsive Layout cho màn hình nhỏ */
 @media (max-width: 768px) {
     .order-page {
         flex-direction: column;
-        /* Chuyển layout thành dạng cột */
         align-items: center;
-        /* Căn giữa các phần tử */
     }
 
     .main-content,
     .sidebar {
         max-width: 100%;
-        /* Đảm bảo không vượt chiều rộng */
         margin-bottom: 20px;
-        /* Tạo khoảng cách giữa các phần */
     }
 
     .sidebar {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getBookById, Book } from '../../services/bookService'; // API để lấy thông tin sách
+import { getBookById, Book } from '../../services/bookService'; 
 import Cart from '../../components/Cart/Cart';
 import Shell from '../../components/Shell/Shell';
-import './BookDetail.css'; // Import CSS
+import './BookDetail.css'; 
 
 const BookDetailPage: React.FC = () => {
   const { bookId } = useParams<{ bookId: string }>();
@@ -16,7 +16,7 @@ const BookDetailPage: React.FC = () => {
       try {
         if (!bookId) throw new Error("Không tìm thấy Book ID");
         const bookData = await getBookById(bookId);
-        console.log("Fetched Book:", bookData); // Log dữ liệu trả về
+        console.log("Fetched Book:", bookData); 
         setBook(bookData);
       } catch (error) {
         setError('Lỗi khi tải chi tiết sách');
@@ -45,7 +45,6 @@ const BookDetailPage: React.FC = () => {
               <p><strong>Tác giả:</strong> {book.author}</p>
               <p><strong>Mô tả:</strong> {book.description}</p>
               <p><strong>Giá:</strong> {book.price} coin</p>
-              {/* <p><strong>Ngày cập nhật:</strong> {book.createdAt}</p> */}
             </div>
           ) : (
             <p>Không tìm thấy sách</p>

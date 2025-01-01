@@ -1,7 +1,6 @@
-import api from './api'; // Giả sử api là axios instance của bạn
+import api from './api'; 
 import { OrderItem, OrderDetailType, CreateOrder } from '../types/Order';
 
-// Lấy danh sách đơn hàng
 export const getListOrder = async (): Promise<OrderItem[]> => {
     try {
         const response = await api.get('/order/list');

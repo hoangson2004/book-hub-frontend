@@ -20,9 +20,9 @@
 }
 
 .cart-container {
-  flex: 1 1 20%; 
+  flex: 1 1 20%;
   margin-right: 10px;
-  padding: 15px; 
+  padding: 15px;
 }
 
 .book-detail {
@@ -61,24 +61,19 @@
   color: #000;
 }
 
-/* Định dạng khi màn hình nhỏ */
 @media (max-width: 768px) {
   .book-detail-container {
     flex-direction: column;
-    /* Chuyển layout sang dạng cột */
     align-items: center;
-    /* Căn giữa các phần tử */
   }
 
   .book-detail-content,
   .cart-container {
     max-width: 100%;
     margin-bottom: 20px;
-    /* Khoảng cách giữa phần sách và giỏ hàng */
   }
 
   .cart-container {
     margin-top: 20px;
-    /* Khoảng cách giữa giỏ hàng và sách */
   }
 }

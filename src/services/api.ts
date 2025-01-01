@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000', // Thay đổi URL API nếu cần
-  timeout: 10000, // Giới hạn timeout 10 giây
+  baseURL: 'http://localhost:3000', 
+  timeout: 10000, 
 });
 
 api.interceptors.request.use(

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getListOrder } from '../../services/orderService';
 import { ListOrder } from '../../types/Order';
 import { Link } from 'react-router-dom';
-import './OrderList.css'; // CSS cho OrderList
+import './OrderList.css'; 
 
 const OrderList: React.FC = () => {
   const [orders, setOrders] = useState<ListOrder[]>([]);

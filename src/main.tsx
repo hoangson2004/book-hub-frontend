@@ -7,7 +7,7 @@ import { CartProvider } from "./provider/CartContext.tsx";
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AuthProvider> {/* Bọc App trong AuthProvider */}
+    <AuthProvider>
       <CartProvider>
         <App />
       </CartProvider>

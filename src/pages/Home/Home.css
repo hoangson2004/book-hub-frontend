@@ -23,39 +23,35 @@
   padding: 15px; 
 }
 
-/* Thu nhỏ các phần tử trong .book-list-container */
 .book-list-container p {
-  font-size: 1rem; /* Giảm kích thước chữ */
+  font-size: 1rem; 
   color: #555;
   text-align: center;
 }
 
-/* Thu nhỏ tiêu đề trong giỏ hàng */
 .cart-container h2 {
-  font-size: 1.2rem; /* Giảm kích thước tiêu đề */
+  font-size: 1.2rem; 
   font-weight: bold;
-  margin-bottom: 15px; /* Giảm khoảng cách dưới tiêu đề */
+  margin-bottom: 15px; 
 }
 
-/* Thu nhỏ nội dung trong giỏ hàng */
 .cart-container p {
-  font-size: 1rem; /* Giảm kích thước chữ */
+  font-size: 1rem; 
   color: #555;
 }
 
-/* Định dạng khi giỏ hàng (cart) được chuyển xuống dưới khi màn hình nhỏ */
 @media (max-width: 768px) {
   .home-container {
-    flex-direction: column; /* Chuyển layout sang dạng cột */
-    align-items: center; /* Căn giữa các phần tử */
+    flex-direction: column; 
+    align-items: center; 
   }
 
   .book-list-container, .cart-container {
-    max-width: 100%; /* Đảm bảo phần tử không vượt quá chiều rộng */
-    margin-bottom: 20px; /* Khoảng cách giữa phần sách và giỏ hàng */
+    max-width: 100%; 
+    margin-bottom: 20px;
   }
 
   .cart-container {
-    margin-top: 20px; /* Khoảng cách giữa giỏ hàng và sách */
+    margin-top: 20px;
   }
 }

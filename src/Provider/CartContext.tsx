@@ -25,7 +25,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Lấy giỏ hàng
     const fetchCart = async () => {
         const token = localStorage.getItem('token');
         if (!token) {
@@ -39,7 +38,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             const response = await getCartByUserId();
 
             if (response.status === 'success' && Array.isArray(response.data)) {
-                // Map dữ liệu server thành cấu trúc CartItem
                 const formattedCart = response.data.map((item: any) => ({
                     bookId: item.bookId._id,
                     title: item.bookId.title.trim(),
@@ -59,31 +57,28 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
     };
 
-    // Xóa sản phẩm khỏi giỏ hàng
     const handleRemove = async (bookId: string) => {
         try {
             await removeFromCart(bookId);
-            fetchCart(); // Cập nhật giỏ hàng sau khi xóa
+            fetchCart(); 
         } catch (err) {
             console.error('Lỗi khi xóa sách:', err);
         }
     };
 
-    // Cập nhật số lượng sản phẩm
     const handleUpdate = async (bookId: string, quantity: number) => {
         try {
             await updateCart(bookId, quantity);
-            fetchCart(); // Cập nhật giỏ hàng sau khi cập nhật
+            fetchCart(); 
         } catch (err) {
             console.error('Lỗi khi cập nhật số lượng:', err);
         }
     };
 
-    // Thêm sản phẩm vào giỏ hàng
     const addToCart = async (bookId: string, quantity: number) => {
         try {
             await addToCartService(bookId, quantity);
-            fetchCart(); // Cập nhật giỏ hàng sau khi thêm
+            fetchCart(); 
         } catch (err) {
             console.error('Lỗi khi thêm sách vào giỏ hàng:', err);
             throw new Error('Không thể thêm sách vào giỏ hàng.');

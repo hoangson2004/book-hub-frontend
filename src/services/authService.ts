@@ -37,19 +37,19 @@ export const getCoinBalance = async () => {
 export const getUserProfile = async (): Promise<User> => {
     try {
         const response = await api.get('/auth/profile');
-        return response.data.user; // Trả về dữ liệu người dùng
+        return response.data.user; 
     } catch (error) {
         console.error('Lỗi khi lấy hồ sơ người dùng:', error);
-        throw error; // Ném lỗi để xử lý ở tầng gọi API
+        throw error; 
     }
 };
 
 export const updateUserProfile = async (profileData: UpdateProfile): Promise<User> => {
     try {
         const response = await api.put('/auth/profile', profileData);
-        return response.data; // Trả về dữ liệu đã cập nhật
+        return response.data;
     } catch (error) {
         console.error('Lỗi khi cập nhật hồ sơ người dùng:', error);
-        throw error; // Ném lỗi để xử lý ở tầng gọi API
+        throw error; 
     }
 };

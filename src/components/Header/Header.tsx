@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Header.css'; // Import CSS
+import './Header.css';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../provider/AuthContext';
 
@@ -21,11 +21,10 @@ const Header: React.FC = () => {
     <header className="header">
       <Link to="/" className="header-title">
         <img 
-          src="/images/home.webp" 
+          src="/images/logo.png" 
           alt="Logo" 
           className="logo" 
         />
-        <h1>The Book Hub</h1>
       </Link>
 
       <form className="header-search" onSubmit={handleSearch}>
@@ -41,7 +40,6 @@ const Header: React.FC = () => {
       <div className="header-auth">
         {isAuthenticated ? (
           <div className="right-button">
-            {/* Avatar + Menu */}
             <div className="user-avatar-container">
               <button className="avatar-button" onClick={toggleMenu}>
                 <img 
@@ -53,9 +51,10 @@ const Header: React.FC = () => {
               {isMenuOpen && (
                 <div className="avatar-menu">
                   <Link to="/account" className="menu-item">Quản lý tài khoản</Link>
-                  <Link to="/orders" className="menu-item">Quản lý đơn hàng</Link>
+                  <Link to="/orders/create" className="menu-item">Quản lý đơn hàng</Link>
                   <Link to="/transactions" className="menu-item">Quản lý giao dịch</Link>
                   <Link to="/favorites" className="menu-item">Danh sách yêu thích</Link>
+                  <Link to="/inbox" className="menu-item">Thư báo</Link>
                   <Link to="/settings" className="menu-item">Cài đặt</Link>
                 </div>
               )}

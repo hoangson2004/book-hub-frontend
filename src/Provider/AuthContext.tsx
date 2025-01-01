@@ -39,7 +39,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         try {
             const { token, user } = await loginService({ email, password });
 
-            // Lưu token vào localStorage
             localStorage.setItem('token', token);
             localStorage.setItem('user', JSON.stringify(user));
 

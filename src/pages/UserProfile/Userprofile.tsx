@@ -5,8 +5,8 @@ import Shell from '../../components/Shell/Shell';
 import './UserProfile.css';
 
 const UserProfile: React.FC = () => {
-    const [userProfile, setUserProfile] = useState<User | null>(null); // Lưu trữ thông tin người dùng
-    const [message, setMessage] = useState<string>(''); // Thông báo trạng thái
+    const [userProfile, setUserProfile] = useState<User | null>(null); 
+    const [message, setMessage] = useState<string>(''); 
 
     useEffect(() => {
         const fetchUserProfile = async () => {
@@ -21,7 +21,6 @@ const UserProfile: React.FC = () => {
         fetchUserProfile();
     }, []);
 
-    // Chế độ xem thông tin người dùng
     const renderProfileInfo = () => (
         <div className="user-profile-container">
             <h2>Thông tin người dùng</h2>
@@ -37,7 +36,7 @@ const UserProfile: React.FC = () => {
     return (
         <Shell>
             <div>
-                {message && <div className="message">{message}</div>} {/* Thông báo trạng thái */}
+                {message && <div className="message">{message}</div>} 
                 {userProfile ? renderProfileInfo() : <p className="loading-text">Đang tải thông tin...</p>}
             </div>
         </Shell>

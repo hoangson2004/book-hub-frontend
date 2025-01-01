@@ -1,4 +1,3 @@
-/* Header container */
 .header {
   position: fixed;
   top: 0;
@@ -12,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+  box-sizing: border-box; 
 }
 
 .header-title {
@@ -22,20 +21,17 @@
   color: #333;
 }
 
-/* Logo */
 .logo {
   object-fit: contain;
   height: 40px;
-  margin-right: 10px; /* Khoảng cách giữa logo và tên */
+  margin-right: 10px; 
 }
 
-/* Tiêu đề website */
 .header-title h1 {
   font-size: 24px;
   margin: 0;
 }
 
-/* Thanh tìm kiếm */
 .header-search {
   flex-grow: 1;
   display: flex;
@@ -70,7 +66,7 @@
 }
 
 .header-search button::before {
-  content: '🔍'; /* Biểu tượng kính lúp */
+  content: '🔍'; 
   font-size: 18px;
 }
 
@@ -82,7 +78,7 @@
 .right-button {
   display: flex;
   align-items: center;
-  gap: 10px; /* Khoảng cách giữa các nút */
+  gap: 10px;
 }
 
 .auth-button {
@@ -105,7 +101,6 @@
   font-weight: bold;
 }
 
-/* Avatar container */
 .user-avatar-container {
   position: relative;
   display: flex;
@@ -129,7 +124,6 @@
   object-fit: cover;
 }
 
-/* Dropdown menu */
 .avatar-menu {
   position: absolute;
   top: calc(100% + 10px);
@@ -154,14 +148,13 @@
   background-color: #f0f0f0;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .header-search input {
-    width: 100%; /* Thanh tìm kiếm chiếm toàn bộ chiều rộng */
-    max-width: 300px; /* Giới hạn chiều rộng */
+    width: 100%; 
+    max-width: 300px; 
   }
 
   .auth-button {
-    width: 100px; /* Giảm chiều rộng nút trên màn hình nhỏ */
+    width: 100px; 
   }
 }
