@@ -148,13 +148,3 @@
   background-color: #f0f0f0;
 }
 
-@media (max-width: 768px) {
-  .header-search input {
-    width: 100%; 
-    max-width: 300px; 
-  }
-
-  .auth-button {
-    width: 100px; 
-  }
-}

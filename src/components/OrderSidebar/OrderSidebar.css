@@ -38,9 +38,3 @@
   color: white;
 }
 
-@media (max-width: 768px) {
-  .sidebar-content {
-    width: 100%; 
-    margin-bottom: 20px;
-  }
-}

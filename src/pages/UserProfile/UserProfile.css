@@ -55,20 +55,3 @@ button:hover {
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    .user-profile-container {
-        padding: 15px;
-    }
-
-    .user-profile-container h2 {
-        font-size: 20px;
-    }
-
-    .user-profile-container p {
-        font-size: 14px;
-    }
-
-    .message {
-        font-size: 14px;
-    }
-}

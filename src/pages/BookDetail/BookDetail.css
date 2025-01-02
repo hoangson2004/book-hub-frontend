@@ -61,19 +61,3 @@
   color: #000;
 }
 
-@media (max-width: 768px) {
-  .book-detail-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .book-detail-content,
-  .cart-container {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .cart-container {
-    margin-top: 20px;
-  }
-}

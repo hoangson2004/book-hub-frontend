@@ -191,32 +191,3 @@ button:hover {
     margin: 10px;
 }
 
-@media (max-width: 768px) {
-    .cart-item-order {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .cart-item-order img {
-        width: 60px;
-        height: 90px;
-    }
-
-    .cart-item-price-order,
-    .cart-item-rental-order,
-    .cart-item-quantity-order,
-    .cart-item-actions-order {
-        text-align: center;
-    }
-
-    .order-summary {
-        font-size: 1rem;
-    }
-
-    .payment-info-order {
-        flex-direction: column;
-    }
-
-    .payment-info-order>div {
-        width: 100%;
-    }
-}

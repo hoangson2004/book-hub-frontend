@@ -27,19 +27,3 @@
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    .order-page {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main-content,
-    .sidebar {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .sidebar {
-        margin-top: 20px;
-    }
-}

@@ -40,18 +40,3 @@
   color: #555;
 }
 
-@media (max-width: 768px) {
-  .home-container {
-    flex-direction: column; 
-    align-items: center; 
-  }
-
-  .book-list-container, .cart-container {
-    max-width: 100%; 
-    margin-bottom: 20px;
-  }
-
-  .cart-container {
-    margin-top: 20px;
-  }
-}
