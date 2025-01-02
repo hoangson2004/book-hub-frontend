@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getBookById, Book } from '../../services/bookService'; 
+import { getBookById } from '../../services/bookService'; 
+import { Book } from '../../types/Book';
 import Cart from '../../components/Cart/Cart';
 import Shell from '../../components/Shell/Shell';
 import './BookDetail.css'; 

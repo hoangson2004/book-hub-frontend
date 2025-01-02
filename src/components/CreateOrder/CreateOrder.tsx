@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import './CreateOrder.css'
 
 const CreateOrderPage: React.FC = () => {
-  const { cart, loading, error, handleRemove, handleUpdate, fetchCart } = useCart();
+  const { cart, loading, error, handleRemove, handleUpdate } = useCart();
   const [dueDate, setDueDate] = useState<string>('');
   const [paymentMethod, setPaymentMethod] = useState<string>('Coin'); 
   const [totalPrice, setTotalPrice] = useState<number>(0); 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { register, RegisterData } from '../../services/authService';
+import { register } from '../../services/authService';
+import { RegisterData } from '../../types/User';
 import Shell from '../../components/Shell/Shell';
 import './auth.css';
 
@@ -10,10 +11,10 @@ const SignUp: React.FC = () => {
         username: '',
         email: '',
         password: '',
-        confirmPassword: '',
         phoneNumber: '',
         dateOfBirth: '',
     });
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState<string | null>(null);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -22,9 +23,13 @@ const SignUp: React.FC = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setConfirmPassword(e.target.value);
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (formData.password !== formData.confirmPassword) {
+        if (formData.password !== confirmPassword) {
             setError('Mật khẩu và mật khẩu xác nhận không khớp');
             return;
         }
@@ -88,8 +93,8 @@ const SignUp: React.FC = () => {
                         <input
                             type={showConfirmPassword ? 'text' : 'password'}
                             name="confirmPassword"
-                            value={formData.confirmPassword}
-                            onChange={handleChange}
+                            value={confirmPassword}
+                            onChange={handleConfirmPasswordChange}
                             required
                         />
                         <span className="eye-icon" onClick={togglePasswordVisibility}>

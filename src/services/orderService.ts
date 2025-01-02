@@ -1,7 +1,7 @@
 import api from './api'; 
-import { OrderItem, OrderDetailType, CreateOrder } from '../types/Order';
+import { OrderDetailType, CreateOrder, ListOrder } from '../types/Order';
 
-export const getListOrder = async (): Promise<OrderItem[]> => {
+export const getListOrder = async (): Promise<ListOrder[]> => {
     try {
         const response = await api.get('/order/list');
         if (Array.isArray(response.data)) {

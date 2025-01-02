@@ -1,11 +1,9 @@
 import React from 'react';
 import { useCart } from '../../provider/CartContext';
-import { useNavigate } from 'react-router-dom'; 
 import './Cart.css';
 
 const Cart: React.FC = () => {
     const { cart, loading, error, handleRemove, handleUpdate } = useCart();
-    const navigate = useNavigate();
 
     if (loading) return <p className="cart-loading">Đang tải giỏ hàng...</p>;
     if (error) return <p className="cart-error">{error}</p>;

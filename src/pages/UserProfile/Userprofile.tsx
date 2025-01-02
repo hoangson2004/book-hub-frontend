@@ -29,7 +29,7 @@ const UserProfile: React.FC = () => {
             <p><strong>Số điện thoại:</strong> {userProfile?.phoneNumber}</p>
             <p><strong>Ngày sinh:</strong> {new Date(userProfile?.dateOfBirth || '').toLocaleDateString()}</p>
             <p><strong>Role:</strong> {userProfile?.role}</p>
-            <p><strong>Ngày tạo tài khoản:</strong> {new Date(userProfile?.createdAt).toLocaleDateString()}</p>
+            <p><strong>Ngày tạo tài khoản:</strong> {new Date(userProfile?.createdAt || '').toLocaleDateString()}</p>
         </div>
     );
 

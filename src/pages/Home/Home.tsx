@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { getAllBooks, Book } from '../../services/bookService';
+import { getAllBooks } from '../../services/bookService';
+import { Book } from '../../types/Book';
 import Cart from '../../components/Cart/Cart';
 import Shell from '../../components/Shell/Shell';
 import BookList from '../../components/BookList/BookList';
