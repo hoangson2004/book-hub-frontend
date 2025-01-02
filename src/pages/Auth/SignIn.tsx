@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../provider/AuthContext.tsx';
 import Shell from '../../components/Shell/Shell.tsx';
-import './auth.css';
+import './Auth.css';
 
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState('');
