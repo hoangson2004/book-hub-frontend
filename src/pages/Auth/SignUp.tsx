@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { register } from '../../services/authService';
 import { RegisterData } from '../../types/User';
 import Shell from '../../components/Shell/Shell';
-import './auth.css';
+import './Auth.css';
 
 const SignUp: React.FC = () => {
     const navigate = useNavigate();
