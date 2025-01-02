@@ -70,13 +70,13 @@
     margin-top: 15px;
 }
 
-.auth-form .switch-container a {
+.auth-form .switch-container span {
     color: #4CAF50;
     text-decoration: none;
     font-weight: bold;
 }
 
-.auth-form .switch-container a:hover {
+.auth-form .switch-container span:hover {
     text-decoration: underline;
 }
     
@@ -88,11 +88,11 @@
     line-height: 1.5;
 }
 
-.agreement-container a {
+.agreement-container span {
     color: #4CAF50;
     text-decoration: none;
 }
 
-.agreement-container a:hover {
+.agreement-container span:hover {
     text-decoration: underline;
 }

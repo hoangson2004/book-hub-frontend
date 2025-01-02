@@ -36,7 +36,7 @@ const SignUp: React.FC = () => {
         try {
             await register(formData);
             alert('Đăng ký thành công! Hãy đăng nhập.');
-            navigate('/sign-in'); // Chuyển về trang đăng nhập
+            navigate('/sign-in');
         } catch (err) {
             setError('Đăng ký không thành công. Vui lòng thử lại.');
         }
@@ -125,14 +125,14 @@ const SignUp: React.FC = () => {
                 <div className="agreement-container">
                     <p>
                         Bằng cách nhấp vào <strong>Đăng ký</strong>, bạn đồng ý với
-                        <a href="/privacy" target="_blank"> Chính sách bảo mật</a> và
-                        <a href="/terms" target="_blank"> Điều khoản dịch vụ</a> của chúng tôi.
+                        <span onClick={() => navigate('/privacy')} style={{ cursor: 'pointer', textDecoration: 'underline' }}> Chính sách bảo mật</span> và
+                        <span onClick={() => navigate('/terms')} style={{ cursor: 'pointer', textDecoration: 'underline' }}> Điều khoản dịch vụ</span> của chúng tôi.
                     </p>
                 </div>
                 <button type="submit">Đăng ký</button>
 
                 <div className="switch-container">
-                    <p>Đã có tài khoản? <a href="/sign-in">Đăng nhập</a></p>
+                    <p>Đã có tài khoản? <span onClick={() => navigate('/sign-in')} style={{ cursor: 'pointer', textDecoration: 'underline' }}>Đăng nhập</span></p>
                 </div>
             </form>
         </Shell>
