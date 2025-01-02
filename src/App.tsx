@@ -20,8 +20,8 @@ const App: React.FC = () => {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/account" element={<UserProfile/>} />
         <Route path="/orders" element={<Order />}>
-          <Route path="history" element={<OrderList />} />
           <Route path="create" element={<CreateOrder />} />
+          <Route path="history" element={<OrderList />} />
           <Route path=":orderId" element={<OrderDetail />} />
         </Route>
       </Routes>
