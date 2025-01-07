@@ -34,3 +34,13 @@ export const createOrderApi = async (orderData: CreateOrder) => {
         throw error;
     }
 };
+
+export const cancelOrder = async (orderId: string): Promise<{ message: string }> => {
+    try {
+        const response = await api.put('/order/cancel', { orderId });
+        return response.data;
+    } catch (error) {
+        console.error(`Lỗi khi hủy đơn hàng với orderId ${orderId}:`, error);
+        throw error;
+    }
+};

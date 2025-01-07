@@ -4,7 +4,8 @@ import { getBookById } from '../../services/bookService';
 import { Book } from '../../types/Book';
 import Cart from '../../components/Cart/Cart';
 import Shell from '../../components/Shell/Shell';
-import './BookDetail.css'; 
+import './BookDetail.css';
+
 
 const BookDetailPage: React.FC = () => {
   const { bookId } = useParams<{ bookId: string }>();
@@ -46,6 +47,10 @@ const BookDetailPage: React.FC = () => {
               <p><strong>Tác giả:</strong> {book.author}</p>
               <p><strong>Mô tả:</strong> {book.description}</p>
               <p><strong>Giá:</strong> {book.price} coin</p>
+              <p><strong>Giá thuê:</strong> {(book.price * 0.02).toFixed(2)} coin/ngày</p>
+              <p><strong>Tồn kho:</strong> {book.stock} cuốn</p>
+              <p><strong>Ngày tạo:</strong> {book.createdAt ? new Date(book.createdAt).toLocaleDateString() : 'Không rõ'}</p>
+              <button className="add-to-cart-button">Thêm vào giỏ hàng</button>
             </div>
           ) : (
             <p>Không tìm thấy sách</p>

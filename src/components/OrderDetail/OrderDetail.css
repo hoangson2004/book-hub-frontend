@@ -32,3 +32,30 @@
     text-align: center;
     margin-top: 50px;
 }
+
+.cancel-order-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.cancel-order-button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-order-button:hover {
+    background-color: #d32f2f;
+}
+
+.cancel-order-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666;
+}

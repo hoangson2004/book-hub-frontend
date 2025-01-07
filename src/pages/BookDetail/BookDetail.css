@@ -6,17 +6,16 @@
   padding: 20px;
   flex-wrap: wrap;
   max-width: 100%;
-
 }
 
 .book-detail-content {
   flex: 1 1 75%;
-  /* Phần chi tiết sách chiếm 80% chiều rộng */
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  text-align: left;
 }
 
 .cart-container {
@@ -28,32 +27,31 @@
 .book-detail {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
+  padding: 50px 200px;
 }
 
 .book-detail img {
   max-width: 100%;
-  /* Đảm bảo ảnh không vượt quá chiều rộng của phần chứa */
   height: auto;
-  /* Chiều cao tự động điều chỉnh theo chiều rộng */
   object-fit: contain;
-  /* Đảm bảo ảnh không bị méo */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .book-detail h2 {
   font-size: 24px;
   color: #333333;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .book-detail p {
   font-size: 16px;
   color: #555555;
   margin: 5px 0;
+  text-align: left;
 }
 
 .book-detail p strong {
@@ -61,3 +59,24 @@
   color: #000;
 }
 
+.add-to-cart-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3;
+}
+
+.add-to-cart-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}

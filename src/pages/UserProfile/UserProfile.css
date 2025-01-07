@@ -55,3 +55,31 @@ button:hover {
     text-align: center;
 }
 
+.update-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.update-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-button:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.update-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(72, 180, 97, 0.5);
+}
